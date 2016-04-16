@@ -1,0 +1,3 @@
+usr/local/go/bin/go usr/bin/go
+usr/local/go/bin/godoc usr/bin/godoc
+usr/local/go/bin/gofmt usr/bin/gofmt

@@ -54,3 +54,11 @@ program. It will run `./configure` with the appropriate options,
 
 We add an upstart script and a systemd unit definition. This package
 won't work with systems using neither systemd nor upstart.
+
+### golang
+
+This package is just a conversion of the precompiled
+tarball. Compiling Go from source is too deemed to complex (unless you
+already have Go). The tarball is extracted in /usr/lib and a symbolic
+link is done from `/usr/local/go` to `/usr/lib/go`. Debian packages are
+not expected to install anything in `/usr/local`.

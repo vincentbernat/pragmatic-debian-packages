@@ -3,7 +3,7 @@ Priority: optional
 Section: web
 Maintainer: Vincent Bernat <bernat@debian.org>
 Build-Depends: debhelper (>= 9),
-               wget, ca-certificates
+               wget, ca-certificates, lsb-release
 
 Package: nodejs
 Architecture: any
