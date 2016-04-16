@@ -1,0 +1,11 @@
+Source: nodejs
+Priority: optional
+Section: web
+Maintainer: Vincent Bernat <bernat@debian.org>
+Build-Depends: debhelper (>= 9),
+               wget, ca-certificates
+
+Package: nodejs
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: evented I/O for V8 javascript

@@ -1,0 +1,17 @@
+# Ignore generated files
+/*.deb
+/*.dsc
+/*.changes
+
+# Ignore project-specific files
+/nodejs/*
+!/nodejs/debian
+
+# Ignore files generated during build
+/*/debian/files
+/*/debian/*.substvars
+/*/debian/*.log
+/*/debian/*-stamp
+/*/debian/*/
+
+

@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+VERSION = 4.4.3
+DISTRIBUTION = $(shell lsb_release -sr)
+PACKAGEVERSION = $(VERSION)-0~$(DISTRIBUTION)0
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	# Grab and unpack wanted version of nodejs
+	wget --progress=dot:mega -N https://nodejs.org/dist/v$(VERSION)/node-v$(VERSION).tar.gz
+	tar --strip-components=1 -xf node-v$(VERSION).tar.gz --exclude=debian/
+
+override_dh_auto_build:
+	# Build it
+	./configure --prefix=/usr
+	make
+
+override_dh_gencontrol:
+	dh_gencontrol -- -v$(PACKAGEVERSION)
