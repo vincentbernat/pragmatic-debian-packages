@@ -3,18 +3,21 @@
 VERSION = 4.4.3
 DISTRIBUTION = $(shell lsb_release -sr)
 PACKAGEVERSION = $(VERSION)-0~$(DISTRIBUTION)0
+TARBALL = node-v$(VERSION).tar.gz
+URL = https://nodejs.org/dist/v$(VERSION)/$(TARBALL)
 
 %:
 	dh $@
 
-override_dh_auto_configure:
+override_dh_auto_clean:
 	# Grab and unpack wanted version of nodejs
-	wget --progress=dot:mega -N https://nodejs.org/dist/v$(VERSION)/node-v$(VERSION).tar.gz
-	tar --strip-components=1 -xf node-v$(VERSION).tar.gz --exclude=debian/
+	wget --progress=dot:mega -N $(URL)
+	tar --strip-components=1 -xf $(TARBALL)
 
-override_dh_auto_build:
-	# Build it
+# Building
+override_dh_auto_configure:
 	./configure --prefix=/usr
+override_dh_auto_build:
 	make
 
 override_dh_gencontrol:

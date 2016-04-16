@@ -5,13 +5,13 @@ DISTRIBUTION = $(shell lsb_release -sr)
 VERSION = 1.6.1
 PACKAGEVERSION = 2:$(VERSION)-0~$(DISTRIBUTION)0
 TARBALL = go$(VERSION).linux-$(ARCH).tar.gz
-UPSTREAM_URL = "https://storage.googleapis.com/golang/$(TARBALL)"
+URL = https://storage.googleapis.com/golang/$(TARBALL)
 
 %:
 	dh $@
 
-override_dh_auto_configure: $(info I: VERSION=$(VERSION)) $(info I: TARBALL=$(TARBALL))
-	wget --progress=dot:mega -N $(UPSTREAM_URL)
+override_dh_auto_clean:
+	wget -N --progress=dot:mega $(URL)
 	tar xf $(TARBALL)
 
 override_dh_gencontrol:

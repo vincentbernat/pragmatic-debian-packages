@@ -1,18 +1,18 @@
 #!/usr/bin/make -f
 
-VERSION = 1.4.25
 DISTRIBUTION = $(shell lsb_release -sr)
+VERSION = 1.4.25
 PACKAGEVERSION = $(VERSION)-0~$(DISTRIBUTION)0
+TARBALL = memcached-$(VERSION).tar.gz
+URL = http://www.memcached.org/files/$(TARBALL)
 
 %:
 	dh $@
 
-override_dh_auto_configure:
+override_dh_auto_clean:
 	# Grab and unpack wanted version
-	wget --progress=dot:mega -N http://www.memcached.org/files/memcached-$(VERSION).tar.gz
-	tar --strip-components=1 -xf memcached-$(VERSION).tar.gz --exclude=debian/
-	# Detect build system as debhelper is able to do everything automatically
-	dh_auto_configure
+	wget -N --progress=dot:mega $(URL)
+	tar --strip-components=1 -xf $(TARBALL)
 
 override_dh_auto_test:
 	# Don't run the whitespace test
