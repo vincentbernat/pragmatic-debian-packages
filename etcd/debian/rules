@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+DISTRIBUTION = $(shell lsb_release -sr)
+VERSION = 2.3.1
+PACKAGEVERSION = $(VERSION)-0~$(DISTRIBUTION)0
+TARBALL = v$(VERSION).tar.gz
+URL = https://github.com/coreos/etcd/archive/$(TARBALL)
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	# Grab and unpack wanted version
+	wget -N --progress=dot:mega $(URL)
+	tar --strip-components=1 -xf $(TARBALL)
+
+override_dh_auto_build:
+	./build
+
+override_dh_gencontrol:
+	dh_gencontrol -- -v$(PACKAGEVERSION)

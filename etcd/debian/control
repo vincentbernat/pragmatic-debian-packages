@@ -1,0 +1,12 @@
+Source: etcd
+Section: admin
+Priority: optional
+Maintainer: Vincent Bernat <bernat@debian.org>
+Build-Depends: debhelper (>= 9),
+               wget, ca-certificates, lsb-release,
+               golang, git
+
+Package: etcd
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, adduser
+Description: highly-available key value store

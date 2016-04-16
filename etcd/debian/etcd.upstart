@@ -1,0 +1,16 @@
+description "etcd key-value store"
+
+start on runlevel [2345]
+stop on runlevel [!2345]
+respawn
+respawn limit 5 60
+
+env ETCD_DATA_DIR=/var/lib/etcd
+
+setuid _etcd
+setgid _etcd
+
+script
+ export ETCD_NAME=$(hostname -f)
+ exec /usr/bin/etcd
+end script
