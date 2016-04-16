@@ -1,0 +1,13 @@
+Source: riemann
+Section: admin
+Priority: optional
+Maintainer: Vincent Bernat <bernat@debian.org>
+Build-Depends: debhelper (>= 9),
+               wget, ca-certificates, lsb-release
+
+Package: riemann
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends},
+         adduser,
+         default-jre-headless (>= 1.8) | java6-runtime-headless | java7-runtime-headless | java8-runtime-headless
+Description: network event stream processor

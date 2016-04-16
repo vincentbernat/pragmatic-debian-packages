@@ -81,3 +81,12 @@ This package ships etcd, a key-value store written in Go. It ships a
 systemd service unit and an upstart job. It doesn't come with a
 `/etc/default/etcd` that would have been handy to have for more
 customizations. It will make the daemon run as `_etcd`.
+
+### riemann
+
+This package ships riemann. The build dependencies are incomplete
+since it is unlikely you'll find lein already packaged. We could fetch
+and execute it in `debian/rules`, but we assume that something else is
+doing that for us. It comes with an upstart and systemd job. It will
+run as `_riemann`. The package makes use of an uberjar to bundle all
+dependencies.

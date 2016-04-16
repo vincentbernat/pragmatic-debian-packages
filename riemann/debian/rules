@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+DISTRIBUTION = $(shell lsb_release -sr)
+VERSION = 0.2.10
+PACKAGEVERSION = $(VERSION)-0~$(DISTRIBUTION)0
+TARBALL = $(VERSION).tar.gz
+URL = https://github.com/riemann/riemann/archive/$(TARBALL)
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	# Grab and unpack wanted version
+	wget -N --progress=dot:mega $(URL)
+	tar --strip-components=1 -xf $(TARBALL)
+
+override_dh_auto_build:
+	lein uberjar
+
+override_dh_link:
+	dh_link usr/share/java/riemann-$(VERSION)-standalone.jar usr/share/java/riemann.jar
+
+override_dh_gencontrol:
+	dh_gencontrol -- -v$(PACKAGEVERSION)
