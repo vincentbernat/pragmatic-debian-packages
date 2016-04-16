@@ -74,3 +74,10 @@ example rely on dh_python, an helper tool to help packaging Python
 modules. We just download and extract the tarball, override the
 package version and let this helper do its work. The resulting package
 is almost correct in respect to the Debian policy.
+
+### etcd
+
+This package ships etcd, a key-value store written in Go. It ships a
+systemd service unit and an upstart job. It doesn't come with a
+`/etc/default/etcd` that would have been handy to have for more
+customizations. It will make the daemon run as `_etcd`.
