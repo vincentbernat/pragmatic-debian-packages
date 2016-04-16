@@ -1,0 +1,13 @@
+Source: memcached
+Priority: optional
+Section: web
+Maintainer: Vincent Bernat <bernat@debian.org>
+Build-Depends: debhelper (>= 9),
+               wget, ca-certificates,
+               libevent-dev,
+               adduser
+
+Package: memcached
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, adduser
+Description: high-performance memory object caching system

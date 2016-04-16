@@ -20,6 +20,10 @@ check). This is more convenient for simple examples, but the `debian/`
 directory could have been just integrated into the original source
 tree to skip this test.
 
+It is better to build the package on the target distribution. Some of
+the generated packages may be installed on another distribution, but
+there is no guarantee.
+
 ## Dependencies
 
 Ensure you have those packages installed:
@@ -38,3 +42,15 @@ This is a all-in-one package for [nodejs](https://nodejs.org/en/). It
 will download the version specified in `debian/rules` and build a
 package from that. This package contains an embedded copy OpenSSL,
 libuv, zlib and I suppose many other dependencies.
+
+### memcached
+
+This is an all-in-one package for
+[memcached](http://www.memcached.org/). It will download the version
+specified in `debian/rules` and build a package from that. Being
+based on autoconf, debhelper knows how to handle this kind of
+program. It will run `./configure` with the appropriate options,
+`make`, `make check` and `make install`.
+
+We add an upstart script and a systemd unit definition. This package
+won't work with systems using neither systemd nor upstart.

@@ -3,9 +3,9 @@
 /*.dsc
 /*.changes
 
-# Ignore project-specific files
-/nodejs/*
-!/nodejs/debian
+# Only care about debian/ directory
+/*/*
+!/*/debian
 
 # Ignore files generated during build
 /*/debian/files
