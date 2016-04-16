@@ -24,6 +24,10 @@ It is better to build the package on the target distribution. Some of
 the generated packages may be installed on another distribution, but
 there is no guarantee.
 
+Note that those packages are received no real operational tests and
+should not be used on production system. Their only purpose is to
+illustrate how to build Debian packages.
+
 ## Dependencies
 
 Ensure you have those packages installed:
