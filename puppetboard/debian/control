@@ -1,0 +1,13 @@
+Source: puppetboard
+Section: admin
+Priority: optional
+Maintainer: Vincent Bernat <bernat@debian.org>
+Build-Depends: debhelper (>= 9),
+               dh-virtualenv,
+               python
+Standards-Version: 3.9.6
+
+Package: puppetboard
+Architecture: all
+Depends: ${python:Depends}, ${misc:Depends}
+Description: web frontend for PuppetDB

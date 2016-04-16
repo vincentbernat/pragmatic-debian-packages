@@ -90,3 +90,11 @@ and execute it in `debian/rules`, but we assume that something else is
 doing that for us. It comes with an upstart and systemd job. It will
 run as `_riemann`. The package makes use of an uberjar to bundle all
 dependencies.
+
+### puppetboard
+
+This package makes use of `dh-virtualenv`, a nifty helper to ship a
+whole virtualenv. Dependencies are therefore frozen and the package is
+independant of other Python modules on the system (but relies
+nonetheless on system Python). As usual, shipped with a user and some
+upstart job/systemd unit.

@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+DISTRIBUTION = $(shell lsb_release -sr)
+VERSION = 0.1.2
+PACKAGEVERSION = $(VERSION)-0~$(DISTRIBUTION)0
+TARBALL = v.$(VERSION).tar.gz
+URL = https://github.com/voxpupuli/puppetboard/archive/$(TARBALL)
+
+%:
+	dh $@ --with python-virtualenv
+
+override_dh_auto_clean:
+	# Grab and unpack wanted version
+	wget -N --progress=dot:mega $(URL)
+	tar --strip-components=1 -xf $(TARBALL)
+
+override_dh_virtualenv:
+	dh_virtualenv --preinstall=gunicorn
+
+override_dh_gencontrol:
+	dh_gencontrol -- -v$(PACKAGEVERSION)
