@@ -3,6 +3,7 @@ Description=riemann server
 After=network.target
 
 [Service]
+User=_riemann
 ConditionPathExists=/usr/share/java/riemann.jar
 ConditionPathExists=/etc/riemann/riemann.config
 EnvironmentFile=/etc/default/riemann
