@@ -11,6 +11,7 @@
 /*/debian/files
 /*/debian/*.substvars
 /*/debian/*.log
+/*/debian/*.debhelper
 /*/debian/*-stamp
 /*/debian/*/
 

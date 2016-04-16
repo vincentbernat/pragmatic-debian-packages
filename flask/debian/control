@@ -1,0 +1,18 @@
+Source: flask
+Section: python
+Priority: optional
+Maintainer: Vincent Bernat <bernat@debian.org>
+Build-Depends: debhelper (>= 9), dh-python,
+               python-all, python3-all,
+               python-setuptools, python3-setuptools,
+               wget, ca-certificates, lsb-release
+
+Package: python-flask
+Architecture: all
+Depends: ${python:Depends}, ${misc:Depends}
+Description: micro web framework based on Werkzeug, Jinja2 and good intentions
+
+Package: python3-flask
+Architecture: all
+Depends: ${python3:Depends}, ${misc:Depends}
+Description: micro web framework based on Werkzeug, Jinja2 and good intentions

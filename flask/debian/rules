@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+export PYBUILD_DESTDIR_python2=debian/python-flask/
+export PYBUILD_DESTDIR_python3=debian/python3-flask/
+
+DISTRIBUTION = $(shell lsb_release -sr)
+VERSION = 0.10.1
+PACKAGEVERSION = $(VERSION)-0~$(DISTRIBUTION)0
+TARBALL = Flask-$(VERSION).tar.gz
+UPSTREAM_URL = https://pypi.python.org/packages/source/F/Flask/$(TARBALL)
+
+%:
+	dh $@ --with python2,python3 --buildsystem pybuild
+
+override_dh_auto_clean:
+	# Download and extract the tarball
+	wget -N --progress=dot:mega $(UPSTREAM_URL)
+	tar --strip-components=1 -xf $(TARBALL)
+
+override_dh_auto_test:
+	# Do not run tests
+
+override_dh_gencontrol:
+	dh_gencontrol -- -v$(PACKAGEVERSION)

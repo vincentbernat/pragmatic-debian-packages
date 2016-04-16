@@ -62,3 +62,11 @@ tarball. Compiling Go from source is too deemed to complex (unless you
 already have Go). The tarball is extracted in /usr/lib and a symbolic
 link is done from `/usr/local/go` to `/usr/lib/go`. Debian packages are
 not expected to install anything in `/usr/local`.
+
+### flask
+
+This is the popular Flask microframework as a Python module. This
+example rely on dh_python, an helper tool to help packaging Python
+modules. We just download and extract the tarball, override the
+package version and let this helper do its work. The resulting package
+is almost correct in respect to the Debian policy.
