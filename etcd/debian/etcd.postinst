@@ -9,3 +9,7 @@ case "$1" in
         chown _etcd:_etcd /var/lib/etcd
         ;;
 esac
+
+#DEBHELPER#
+
+exit 0

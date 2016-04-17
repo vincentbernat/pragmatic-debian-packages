@@ -9,3 +9,7 @@ case "$1" in
         chown _riemann:adm /var/log/riemann
         ;;
 esac
+
+#DEBHELPER#
+
+exit 0

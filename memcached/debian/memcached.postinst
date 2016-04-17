@@ -8,3 +8,7 @@ case "$1" in
                 --no-create-home --quiet --force-badname --group _memcached
         ;;
 esac
+
+#DEBHELPER#
+
+exit 0
