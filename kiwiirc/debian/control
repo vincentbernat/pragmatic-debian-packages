@@ -3,10 +3,10 @@ Section: admin
 Priority: optional
 Maintainer: Vincent Bernat <bernat@debian.org>
 Build-Depends: debhelper (>= 9),
-               nodejs, npm
-Standards-Version: 3.9.6
+               nodejs, npm,
+               dh-systemd
 
 Package: kiwiirc
-Architecture: all
-Depends: ${python:Depends}, ${misc:Depends}
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, adduser
 Description: IRC web client

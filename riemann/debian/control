@@ -3,7 +3,8 @@ Section: admin
 Priority: optional
 Maintainer: Vincent Bernat <bernat@debian.org>
 Build-Depends: debhelper (>= 9),
-               wget, ca-certificates, lsb-release
+               wget, ca-certificates, lsb-release,
+               dh-systemd
 
 Package: riemann
 Architecture: any

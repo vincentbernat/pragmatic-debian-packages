@@ -7,7 +7,7 @@ TARBALL = memcached-$(VERSION).tar.gz
 URL = http://www.memcached.org/files/$(TARBALL)
 
 %:
-	dh $@
+	dh $@ --with systemd
 
 override_dh_auto_clean:
 	# Grab and unpack wanted version

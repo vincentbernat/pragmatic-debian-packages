@@ -5,7 +5,7 @@ Maintainer: Vincent Bernat <bernat@debian.org>
 Build-Depends: debhelper (>= 9),
                wget, ca-certificates, lsb-release,
                libevent-dev,
-               adduser
+               dh-systemd
 
 Package: memcached
 Architecture: any

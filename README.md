@@ -38,6 +38,17 @@ Ensure you have those packages installed:
 
 You may also want the specified build dependencies.
 
+## systemd support
+
+When applicable, the examples come with systemd support. This adds
+`dh-systemd` as a build-dependency and makes the package unsuitable to
+be built on Precise. You can remove `dh-systemd` from
+build-dependencies and also remove its mention in `debian/rules` if
+you want to stay compatible with Precise. In this case, for later
+systems, the service file will be installed but the service won't be
+started/stopped by package management. This is in contrats with what
+happens with upstart and SysV init file.
+
 ## Packages
 
 ### nodejs

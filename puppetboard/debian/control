@@ -4,10 +4,10 @@ Priority: optional
 Maintainer: Vincent Bernat <bernat@debian.org>
 Build-Depends: debhelper (>= 9),
                dh-virtualenv,
+               dh-systemd
                python
-Standards-Version: 3.9.6
 
 Package: puppetboard
 Architecture: all
-Depends: ${python:Depends}, ${misc:Depends}
+Depends: ${python:Depends}, ${misc:Depends}, adduser
 Description: web frontend for PuppetDB

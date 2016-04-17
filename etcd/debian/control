@@ -4,7 +4,8 @@ Priority: optional
 Maintainer: Vincent Bernat <bernat@debian.org>
 Build-Depends: debhelper (>= 9),
                wget, ca-certificates, lsb-release,
-               golang, git
+               golang, git,
+               dh-systemd
 
 Package: etcd
 Architecture: any

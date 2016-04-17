@@ -7,7 +7,7 @@ TARBALL = $(VERSION).tar.gz
 URL = https://github.com/riemann/riemann/archive/$(TARBALL)
 
 %:
-	dh $@
+	dh $@ --with systemd
 
 override_dh_auto_clean:
 	# Grab and unpack wanted version
