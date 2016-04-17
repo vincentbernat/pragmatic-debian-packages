@@ -1,0 +1,12 @@
+Source: kiwiirc
+Section: admin
+Priority: optional
+Maintainer: Vincent Bernat <bernat@debian.org>
+Build-Depends: debhelper (>= 9),
+               nodejs, npm
+Standards-Version: 3.9.6
+
+Package: kiwiirc
+Architecture: all
+Depends: ${python:Depends}, ${misc:Depends}
+Description: IRC web client

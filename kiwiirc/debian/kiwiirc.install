@@ -1,0 +1,8 @@
+kiwi usr/lib/kiwiirc
+node_modules usr/lib/kiwiirc
+client usr/lib/kiwiirc
+server usr/lib/kiwiirc
+server_modules usr/lib/kiwiirc
+package.json usr/lib/kiwiirc
+
+debian/config.js /etc/kiwiirc

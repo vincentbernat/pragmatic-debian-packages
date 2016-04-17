@@ -98,3 +98,9 @@ whole virtualenv. Dependencies are therefore frozen and the package is
 independant of other Python modules on the system (but relies
 nonetheless on system Python). As usual, shipped with a user and some
 upstart job/systemd unit.
+
+### kiwiirc
+
+This is an IRC web client written in Node.JS. There is currently no
+equivalent to `dh-virtualenv` for NodeJS but it's enough to do
+yourself. Shipped with a user and some upstart job/systemd unit.

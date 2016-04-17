@@ -1,0 +1,12 @@
+[Unit]
+Description=KiwiIRC
+After=network.target
+
+[Service]
+User=_kiwiirc
+ConditionPathExists=/etc/kiwiirc/config.js
+ExecStart=/usr/lib/kiwiirc/kiwi -f start -c /etc/kiwiirc/config.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
