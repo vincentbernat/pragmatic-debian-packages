@@ -1,7 +1,5 @@
 Source: golang
-Priority: optional
-Section: net
-Maintainer: vbe@exoscale.ch
+Maintainer: Vincent Bernat <bernat@debian.org>
 Build-Depends: debhelper (>= 9),
                wget, ca-certificates, lsb-release
 

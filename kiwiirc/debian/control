@@ -1,6 +1,4 @@
 Source: kiwiirc
-Section: admin
-Priority: optional
 Maintainer: Vincent Bernat <bernat@debian.org>
 Build-Depends: debhelper (>= 9),
                nodejs, npm,

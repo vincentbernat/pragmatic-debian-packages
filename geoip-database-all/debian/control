@@ -1,6 +1,4 @@
 Source: geoip-database-all
-Section: net
-Priority: optional
 Maintainer: Vincent Bernat <bernat@debian.org>
 Build-Depends: debhelper (>= 9),
                wget
