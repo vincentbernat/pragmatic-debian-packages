@@ -51,6 +51,12 @@ happens with upstart and SysV init file.
 
 ## Packages
 
+### geoip-database-all
+
+This package is built from the most recent Maxmind GeoIP databases. It
+is intended to be built monthly and should replace `geoip-database`,
+`geoip-database-extra` and `geoip-database-contrib` packages.
+
 ### nodejs
 
 This is a all-in-one package for [nodejs](https://nodejs.org/en/). It

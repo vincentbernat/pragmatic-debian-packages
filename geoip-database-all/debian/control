@@ -1,0 +1,14 @@
+Source: geoip-database-all
+Section: net
+Priority: optional
+Maintainer: Vincent Bernat <bernat@debian.org>
+Build-Depends: debhelper (>= 9),
+               wget
+
+Package: geoip-database-all
+Architecture: all
+Depends: ${misc:Depends}
+Conflicts: geoip-database, geoip-database-extra, geoip-database-contrib
+Replaces: geoip-database, geoip-database-extra, geoip-database-contrib
+Provides: geoip-database, geoip-database-extra, geoip-database-contrib
+Description: IP lookup command line tools that use the GeoIP library (all databases)

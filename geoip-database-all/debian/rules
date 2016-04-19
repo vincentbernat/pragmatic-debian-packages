@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+
+DISTRIBUTION = $(shell lsb_release -sr)
+VERSION = 0.$(shell date +%Y%m%d)
+PACKAGEVERSION = $(VERSION)-0~$(DISTRIBUTION)0
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	# http://dev.maxmind.com/geoip/legacy/geolite/
+	wget "http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz"
+	wget "http://geolite.maxmind.com/download/geoip/database/GeoIPv6.dat.gz"
+	wget "http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz"
+	wget "http://geolite.maxmind.com/download/geoip/database/GeoLiteCityv6-beta/GeoLiteCityv6.dat.gz"
+	wget "http://download.maxmind.com/download/geoip/database/asnum/GeoIPASNum.dat.gz"
+	wget "http://download.maxmind.com/download/geoip/database/asnum/GeoIPASNumv6.dat.gz"
+	# http://dev.maxmind.com/geoip/geoip2/geolite2/
+	wget "http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz"
+	wget "http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.mmdb.gz"
+	# Uncompress
+	for db in *.gz; do gunzip $$db ; done
+
+override_dh_gencontrol:
+	dh_gencontrol -- -v0.$(shell date +%Y%m%d)~$(DISTRIBUTION)$(VERSION)
