@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Vincent Bernat <bernat@debian.org>
 Build-Depends: debhelper (>= 9),
                dh-virtualenv,
-               dh-systemd
+               dh-systemd,
                python
 
 Package: puppetboard
