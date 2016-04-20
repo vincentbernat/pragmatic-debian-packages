@@ -7,5 +7,6 @@ Build-Depends: debhelper (>= 9),
 
 Package: puppetboard
 Architecture: all
+Pre-Depends: dpkg (>= 1.16.1), python2.7, ${misc:Pre-Depends}
 Depends: ${python:Depends}, ${misc:Depends}, adduser
 Description: web frontend for PuppetDB
