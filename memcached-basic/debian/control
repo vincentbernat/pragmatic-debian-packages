@@ -1,0 +1,7 @@
+Source: memcached
+Maintainer: Vincent Bernat <bernat@debian.org>
+
+Package: memcached
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: high-performance memory object caching system

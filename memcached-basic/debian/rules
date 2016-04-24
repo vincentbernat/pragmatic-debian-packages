@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+DISTRIBUTION = $(shell lsb_release -sr)
+VERSION = 1.4.25
+PACKAGEVERSION = $(VERSION)-0~$(DISTRIBUTION)0
+TARBALL = memcached-$(VERSION).tar.gz
+URL = http://www.memcached.org/files/$(TARBALL)
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+override_dh_auto_test:
+override_dh_auto_build:
+override_dh_auto_install:
+	wget -N --progress=dot:mega $(URL)
+	tar --strip-components=1 -xf $(TARBALL)
+	./configure --prefix=/usr
+	make
+	make install DESTDIR=debian/memcached
+
+override_dh_gencontrol:
+	dh_gencontrol -- -v$(PACKAGEVERSION)

@@ -76,6 +76,11 @@ program. It will run `./configure` with the appropriate options,
 We add an upstart script and a systemd unit definition. This package
 won't work with systems using neither systemd nor upstart.
 
+### memcached-basic
+
+This is a more basic version of the previous package. Notably, it's
+easier to explain as an introduction to "pragmatic" packaging.
+
 ### golang
 
 This package is just a conversion of the precompiled
