@@ -6,6 +6,6 @@ respawn
 respawn limit 5 60
 
 script
- . /etc/default/memcached
+  . /etc/default/memcached
   exec memcached -u $USER -p $PORT -m $CACHESIZE -c $MAXCONN $OPTIONS
 end script
