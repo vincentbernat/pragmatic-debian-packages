@@ -1,5 +1,6 @@
 Source: riemann
 Maintainer: Vincent Bernat <bernat@debian.org>
+# Some build dependencies are missing on purpose, see README.md
 Build-Depends: debhelper (>= 9),
                wget, ca-certificates, lsb-release,
                dh-systemd
