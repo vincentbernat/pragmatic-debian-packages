@@ -4,8 +4,9 @@ start on runlevel [2345]
 stop on runlevel [!2345]
 respawn
 respawn limit 5 60
+expect daemon
 
 script
   . /etc/default/memcached
-  exec memcached -u $USER -p $PORT -m $CACHESIZE -c $MAXCONN $OPTIONS
+  exec memcached -d -u $USER -p $PORT -m $CACHESIZE -c $MAXCONN $OPTIONS
 end script
