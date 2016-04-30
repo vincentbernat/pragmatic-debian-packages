@@ -81,6 +81,11 @@ won't work with systems using neither systemd nor upstart.
 This is a more basic version of the previous package. Notably, it's
 easier to explain as an introduction to "pragmatic" packaging.
 
+### memcached-intermediate
+
+This is an intermediate version between `memcached-basic` and
+`memcached`.
+
 ### golang
 
 This package is just a conversion of the precompiled
