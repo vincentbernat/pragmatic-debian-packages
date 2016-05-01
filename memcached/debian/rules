@@ -10,7 +10,6 @@ URL = http://www.memcached.org/files/$(TARBALL)
 	dh $@ --with systemd
 
 override_dh_auto_clean:
-	# Grab and unpack wanted version
 	wget -N --progress=dot:mega $(URL)
 	tar --strip-components=1 -xf $(TARBALL)
 
