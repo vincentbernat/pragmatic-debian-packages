@@ -4,6 +4,9 @@ Those are examples on how to build Debian packages using Debian tools
 while being quite loose on the policy. Those packages are not fit for
 the official Debian archive but may be OK for other usages.
 
+See the following articles for some background:
+[Pragmatic Debian packaging](http://vincent.bernat.im/en/blog/2016-pragmatic-debian-packaging.html).
+
 All those packages can be built with:
 
     dpkg-buildpackage -us -uc -b
