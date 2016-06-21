@@ -4,7 +4,7 @@ export PYBUILD_DESTDIR_python2=debian/python-flask/
 export PYBUILD_DESTDIR_python3=debian/python3-flask/
 
 VERSION = 0.10.1
-DISTRIBUTION = $(shell lsb_release -sr)
+DISTRIBUTION = $(shell lsb_release -sc)
 PACKAGEVERSION = $(VERSION)-0~$(DISTRIBUTION)0
 TARBALL = Flask-$(VERSION).tar.gz
 URL = https://pypi.python.org/packages/source/F/Flask/$(TARBALL)

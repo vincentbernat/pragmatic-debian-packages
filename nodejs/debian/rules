@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
 VERSION = 4.4.3
-DISTRIBUTION = $(shell lsb_release -sr)
+DISTRIBUTION = $(shell lsb_release -sc)
 PACKAGEVERSION = $(VERSION)-0~$(DISTRIBUTION)0
 TARBALL = node-v$(VERSION).tar.gz
 URL = https://nodejs.org/dist/v$(VERSION)/$(TARBALL)

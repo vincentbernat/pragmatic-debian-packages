@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-DISTRIBUTION = $(shell lsb_release -sr)
+DISTRIBUTION = $(shell lsb_release -sc)
 VERSION = 0.2.10
 PACKAGEVERSION = $(VERSION)-0~$(DISTRIBUTION)0
 TARBALL = $(VERSION).tar.gz

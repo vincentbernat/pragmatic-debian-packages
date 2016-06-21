@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
 ARCH = $(shell dpkg-architecture -qDEB_HOST_ARCH | sed "s/^i//")
-DISTRIBUTION = $(shell lsb_release -sr)
+DISTRIBUTION = $(shell lsb_release -sc)
 VERSION = 1.6.1
 PACKAGEVERSION = 2:$(VERSION)-0~$(DISTRIBUTION)0
 TARBALL = go$(VERSION).linux-$(ARCH).tar.gz
