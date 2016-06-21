@@ -9,5 +9,5 @@ Package: riemann
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends},
          adduser,
-         default-jre-headless (>= 1.8) | java6-runtime-headless | java7-runtime-headless | java8-runtime-headless
+         default-jre-headless (>= 1:1.7) | java6-runtime-headless | java7-runtime-headless | java8-runtime-headless
 Description: network event stream processor
