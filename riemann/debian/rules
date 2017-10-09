@@ -22,3 +22,7 @@ override_dh_link:
 
 override_dh_gencontrol:
 	dh_gencontrol -- -v$(PACKAGEVERSION)
+
+# Slow with Java stuff. For custom packages, there is not much
+# interest in using it.
+override_dh_strip_nondeterminism:
