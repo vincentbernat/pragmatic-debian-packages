@@ -13,6 +13,9 @@ override_dh_gencontrol:
 	dh_gencontrol -- -v$(DEBVERSION)
 
 override_dh_virtualenv:
+	# With this command, we:
+	#  - download everything from the provided requirements.txt
+	#  - don't use wheels, except for "symbolic"
 	dh_virtualenv \
 		--extra-pip-arg="--no-binary=:all:" \
 		--extra-pip-arg="--only-binary=symbolic" \
