@@ -1,0 +1,4 @@
+sentry[postgres]
+dj-database-url
+dj-redis-url
+django-redis-cache
