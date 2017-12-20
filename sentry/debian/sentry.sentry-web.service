@@ -1,0 +1,16 @@
+[Unit]
+Description=Sentry Main Service
+ConditionPathExists=/etc/sentry/sentry.conf.py
+After=network.target
+Requires=sentry-worker.service
+Requires=sentry-cron.service
+
+[Service]
+Type=simple
+User=_sentry
+Environment=SENTRY_CONF=/etc/sentry
+ExecStart=/usr/bin/sentry run web
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

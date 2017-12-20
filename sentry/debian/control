@@ -1,0 +1,37 @@
+Source: sentry
+Section: python
+Priority: extra
+Maintainer: Exoscale <ops@exoscale.ch>
+Build-Depends: debhelper (>= 9),
+               dh-virtualenv (>= 0.8),
+               dh-systemd,
+               lsb-release,
+               python2.7,
+               python2.7-dev,
+               libxslt1-dev,
+               libxml2-dev,
+               libffi-dev,
+               libpq-dev,
+               libssl-dev,
+               libtiff5-dev,
+               libjpeg8-dev,
+               zlib1g-dev,
+               libfreetype6-dev,
+               liblcms2-dev,
+               libwebp-dev,
+               libharfbuzz-dev,
+               libfribidi-dev,
+               tcl8.6-dev,
+               tk8.6-dev,
+               python-tk
+Standards-Version: 3.9.5
+
+Package: sentry
+Architecture: any
+Pre-Depends: dpkg (>= 1.16.1),
+             ${misc:Pre-Depends}
+Depends: ${python:Depends},
+         ${shlibs:Depends},
+         ${misc:Depends},
+         adduser
+Description: realtime logging and aggregation server

@@ -1,0 +1,14 @@
+[Unit]
+Description=Sentry Beat Service
+ConditionPathExists=/etc/sentry/sentry.conf.py
+After=network.target
+
+[Service]
+Type=simple
+User=_sentry
+Environment=SENTRY_CONF=/etc/sentry
+ExecStart=/usr/bin/sentry run cron
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

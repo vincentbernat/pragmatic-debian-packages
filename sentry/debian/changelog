@@ -1,0 +1,5 @@
+sentry (0.0) unstable; urgency=medium
+
+  * Initial release.
+
+ -- Vincent Bernat <bernat@debian.org>  Thu, 15 Jun 2017 13:13:19 +0200

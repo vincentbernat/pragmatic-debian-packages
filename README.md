@@ -129,6 +129,14 @@ independant of other Python modules on the system (but relies
 nonetheless on system Python). As usual, shipped with a user and some
 upstart job/systemd unit.
 
+### sentry
+
+This package also uses `dh-virtualenv` but with a variation. It relies
+on `pip` to download `sentry` through a provided `requirements.txt`
+(where the version can be influenced). It also ensure everything is
+built from source with the exception of `symbolic` which is too "hard"
+to compile (it needs `rust` and `cargo`).
+
 ### kiwiirc
 
 This is an IRC web client written in Node.JS. There is currently no
