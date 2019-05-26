@@ -1,8 +1,8 @@
 #!/usr/bin/make -f
 
 ARCH = $(shell dpkg-architecture -qDEB_HOST_ARCH | sed "s/^i//")
-DISTRIBUTION = $(shell lsb_release -sc)
-VERSION = 1.6.1
+DISTRIBUTION = $(shell sed -n "s/^VERSION_CODENAME=//p" /etc/os-release)
+VERSION = 1.12.5
 PACKAGEVERSION = 2:$(VERSION)-0~$(DISTRIBUTION)0
 TARBALL = go$(VERSION).linux-$(ARCH).tar.gz
 URL = https://storage.googleapis.com/golang/$(TARBALL)
@@ -16,3 +16,8 @@ override_dh_auto_clean:
 
 override_dh_gencontrol:
 	dh_gencontrol -- -v$(PACKAGEVERSION)
+
+# Some helpers cannot handle Go binaries
+override_dh_strip:
+override_dh_strip_nondeterminism:
+override_dh_shlibdeps:
