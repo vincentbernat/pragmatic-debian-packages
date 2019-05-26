@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
-DISTRIBUTION = $(shell lsb_release -sc)
-VERSION = 1.4.25
+DISTRIBUTION = $(shell sed -n "s/^VERSION_CODENAME=//p" /etc/os-release)
+VERSION = 1.5.16
 PACKAGEVERSION = $(VERSION)-0~$(DISTRIBUTION)0
 TARBALL = memcached-$(VERSION).tar.gz
 URL = http://www.memcached.org/files/$(TARBALL)

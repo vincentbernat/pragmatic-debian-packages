@@ -1,9 +1,8 @@
 Source: memcached
 Maintainer: Vincent Bernat <bernat@debian.org>
-Build-Depends: debhelper (>= 9),
-               wget, ca-certificates, lsb-release,
-               libevent-dev,
-               dh-systemd
+Build-Depends: debhelper (>= 11),
+               wget, ca-certificates,
+               libevent-dev
 
 Package: memcached
 Architecture: any
