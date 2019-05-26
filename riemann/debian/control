@@ -1,13 +1,11 @@
 Source: riemann
 Maintainer: Vincent Bernat <bernat@debian.org>
 # Some build dependencies are missing on purpose, see README.md
-Build-Depends: debhelper (>= 9),
-               wget, ca-certificates, lsb-release,
-               dh-systemd
+Build-Depends: debhelper (>= 11),
+               wget, ca-certificates
 
 Package: riemann
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends},
-         adduser,
          default-jre-headless (>= 1:1.7) | java6-runtime-headless | java7-runtime-headless | java8-runtime-headless
 Description: network event stream processor

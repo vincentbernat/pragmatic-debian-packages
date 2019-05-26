@@ -1,13 +1,13 @@
 #!/usr/bin/make -f
 
-DISTRIBUTION = $(shell lsb_release -sc)
-VERSION = 0.2.10
+DISTRIBUTION = $(shell sed -n "s/^VERSION_CODENAME=//p" /etc/os-release)
+VERSION = 0.3.2
 PACKAGEVERSION = $(VERSION)-0~$(DISTRIBUTION)0
 TARBALL = $(VERSION).tar.gz
 URL = https://github.com/riemann/riemann/archive/$(TARBALL)
 
 %:
-	dh $@ --with systemd
+	dh $@
 
 override_dh_auto_clean:
 	# Grab and unpack wanted version
