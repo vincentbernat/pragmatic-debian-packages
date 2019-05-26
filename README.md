@@ -2,7 +2,9 @@
 
 Those are examples on how to build Debian packages using Debian tools
 while being quite loose on the policy. Those packages are not fit for
-the official Debian archive but may be OK for other usages.
+the official Debian archive but may be OK for other usages. The
+packaging practices presented here are compatible with Debian 8
+(Jessie) and more recent, and Ubuntu Precise and more recent.
 
 See the following articles for some background:
 [Pragmatic Debian packaging](http://vincent.bernat.im/en/blog/2016-pragmatic-debian-packaging.html).
