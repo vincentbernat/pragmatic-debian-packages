@@ -2,12 +2,12 @@
 export LANG=C.UTF-8
 export LC_ALL=C.UTF-8
 
-DISTRIBUTION := $(shell lsb_release -sc)
+DISTRIBUTION = $(shell sed -n "s/^VERSION_CODENAME=//p" /etc/os-release)
 VERSION = $(shell debian/sentry/usr/share/python/sentry/bin/python -c 'import pkg_resources; print(str(pkg_resources.get_distribution("sentry")).split()[1])')
 DEBVERSION = $(VERSION)-0~$(DISTRIBUTION)0
 
 %:
-	dh $@ --with python-virtualenv,systemd
+	dh $@ --with python-virtualenv
 
 override_dh_gencontrol:
 	dh_gencontrol -- -v$(DEBVERSION)
@@ -25,11 +25,7 @@ override_dh_virtualenv:
 override_dh_shlibdeps:
 	dh_shlibdeps -X/firefox/x86/
 
-override_dh_installinit:
-	dh_installinit --name=sentry-web
-	dh_installinit --name=sentry-worker
-	dh_installinit --name=sentry-cron
-override_dh_systemd_enable:
-	dh_systemd_enable --name=sentry-web
-	dh_systemd_enable --name=sentry-worker
-	dh_systemd_enable --name=sentry-cron
+override_dh_installsystemd:
+	dh_installsystemd --name=sentry-web
+	dh_installsystemd --name=sentry-worker
+	dh_installsystemd --name=sentry-cron

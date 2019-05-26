@@ -2,10 +2,8 @@ Source: sentry
 Section: python
 Priority: extra
 Maintainer: Exoscale <ops@exoscale.ch>
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 11),
                dh-virtualenv (>= 0.8),
-               dh-systemd,
-               lsb-release,
                python2.7,
                python2.7-dev,
                libxslt1-dev,

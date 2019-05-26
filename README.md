@@ -8,7 +8,7 @@ packaging practices presented here are compatible with Debian 9
 wish to support older distributions, switch to the `2016` tag.
 
 See the following articles for some background:
-[Pragmatic Debian packaging](http://vincent.bernat.im/en/blog/2016-pragmatic-debian-packaging.html).
+[Pragmatic Debian packaging](http://vincent.bernat.im/en/blog/2019-pragmatic-debian-packaging.html).
 
 All those packages can be built with:
 
@@ -136,7 +136,9 @@ This package also uses `dh-virtualenv` but with a variation. It relies
 on `pip` to download `sentry` through a provided `requirements.txt`
 (where the version can be influenced). It also ensure everything is
 built from source with the exception of `symbolic` which is too "hard"
-to compile (it needs `rust` and `cargo`).
+to compile (it needs `rust` and `cargo`). It also uses several systemd
+unit files. As a dynamic user cannot be shared accross systemd unit
+files, we have to create the user in postinst.
 
 ### kiwiirc
 
