@@ -142,4 +142,4 @@ to compile (it needs `rust` and `cargo`).
 
 This is an IRC web client written in Node.JS. There is currently no
 equivalent to `dh-virtualenv` for NodeJS but it's enough to do
-yourself. Shipped with a user and some upstart job/systemd unit.
+yourself. Shipped with a systemd unit featuring a dynamic user.

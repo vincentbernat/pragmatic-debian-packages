@@ -3,10 +3,10 @@ Description=KiwiIRC
 After=network.target
 
 [Service]
-User=_kiwiirc
 ConditionPathExists=/etc/kiwiirc/config.js
 ExecStart=/usr/lib/kiwiirc/kiwi -f start -c /etc/kiwiirc/config.js
 Restart=on-failure
+DynamicUser=true
 
 [Install]
 WantedBy=multi-user.target

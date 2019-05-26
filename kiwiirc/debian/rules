@@ -1,13 +1,13 @@
 #!/usr/bin/make -f
 
-DISTRIBUTION = $(shell lsb_release -sc)
+DISTRIBUTION = $(shell sed -n "s/^VERSION_CODENAME=//p" /etc/os-release)
 VERSION = 0.9.4
 PACKAGEVERSION = $(VERSION)-0~$(DISTRIBUTION)0
 TARBALL = v$(VERSION).tar.gz
 URL = https://github.com/prawnsalad/KiwiIRC/archive/$(TARBALL)
 
 %:
-	dh $@ --with systemd
+	dh $@
 
 override_dh_auto_clean:
 	# Grab and unpack wanted version
@@ -15,7 +15,7 @@ override_dh_auto_clean:
 	tar --strip-components=1 -xf $(TARBALL)
 
 override_dh_auto_build:
-	npm install
+	HOME=$(PWD) npm install
 	cp config.example.js config.js
 	./kiwi build
 

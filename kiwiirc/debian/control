@@ -1,10 +1,10 @@
 Source: kiwiirc
 Maintainer: Vincent Bernat <bernat@debian.org>
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 11),
                nodejs, npm,
-               dh-systemd
+               wget, ca-certificates
 
 Package: kiwiirc
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, adduser
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: IRC web client
