@@ -1,12 +1,11 @@
 Source: puppetboard
 Maintainer: Vincent Bernat <bernat@debian.org>
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 11),
                dh-virtualenv,
-               dh-systemd,
                python
 
 Package: puppetboard
 Architecture: all
 Pre-Depends: dpkg (>= 1.16.1), python2.7, ${misc:Pre-Depends}
-Depends: ${python:Depends}, ${misc:Depends}, adduser
+Depends: ${python:Depends}, ${misc:Depends}
 Description: web frontend for PuppetDB
