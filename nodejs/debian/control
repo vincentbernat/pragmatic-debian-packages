@@ -1,7 +1,7 @@
 Source: nodejs
 Maintainer: Vincent Bernat <bernat@debian.org>
-Build-Depends: debhelper (>= 9),
-               wget, ca-certificates, lsb-release
+Build-Depends: debhelper (>= 11),
+               wget, ca-certificates
 
 Package: nodejs
 Architecture: any

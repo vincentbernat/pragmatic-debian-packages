@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
-VERSION = 4.4.3
-DISTRIBUTION = $(shell lsb_release -sc)
+VERSION = 10.15.3
+DISTRIBUTION = $(shell sed -n "s/^VERSION_CODENAME=//p" /etc/os-release)
 PACKAGEVERSION = $(VERSION)-0~$(DISTRIBUTION)0
 TARBALL = node-v$(VERSION).tar.gz
 URL = https://nodejs.org/dist/v$(VERSION)/$(TARBALL)
