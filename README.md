@@ -3,8 +3,9 @@
 Those are examples on how to build Debian packages using Debian tools
 while being quite loose on the policy. Those packages are not fit for
 the official Debian archive but may be OK for other usages. The
-packaging practices presented here are compatible with Debian 8
-(Jessie) and more recent, and Ubuntu Precise and more recent.
+packaging practices presented here are compatible with Debian 9
+(Stretch) and more recent, and Ubuntu Bionic and more recent. If you
+wish to support older distributions, switch to the `2016` tag.
 
 See the following articles for some background:
 [Pragmatic Debian packaging](http://vincent.bernat.im/en/blog/2016-pragmatic-debian-packaging.html).
@@ -19,6 +20,10 @@ attempt to build source packages as they are likely to be flawed.
 If you don't wish to satisfy the build dependencies, you can build with:
 
     dpkg-buildpackage -us -uc -b -d
+
+You can build them with `git-pbuilder` as well:
+
+    GIT_PBUILDER_OPTIONS=--use-network=yes DIST=bionic git-pbuilder -us -uc -b
 
 Most packages will download the source code from Internet (without any
 check). This is more convenient for simple examples, but the `debian/`
@@ -39,20 +44,14 @@ Ensure you have those packages installed:
 
  - `build-essential`
  - `debhelper`
- - `pkg-create-dbgsym` (optional, only for Ubuntu systems)
 
 You may also want the specified build dependencies.
 
 ## systemd support
 
-When applicable, the examples come with systemd support. This adds
-`dh-systemd` as a build-dependency and makes the package unsuitable to
-be built on Precise. You can remove `dh-systemd` from
-build-dependencies and also remove its mention in `debian/rules` if
-you want to stay compatible with Precise. In this case, for later
-systems, the service file will be installed but the service won't be
-started/stopped by package management. This is in contrats with what
-happens with upstart and SysV init file.
+When applicable, the examples come with systemd support. Support for
+other inits are not illustrated here (have a look at the `2016` tag if
+you want to support non-systemd init systems).
 
 ## Packages
 
