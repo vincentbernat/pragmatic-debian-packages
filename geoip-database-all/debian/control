@@ -1,6 +1,6 @@
 Source: geoip-database-all
 Maintainer: Vincent Bernat <bernat@debian.org>
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 11),
                wget
 
 Package: geoip-database-all
