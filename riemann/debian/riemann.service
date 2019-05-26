@@ -3,6 +3,8 @@ Description=riemann server
 After=network.target
 
 [Service]
+User=_riemann
+DynamicUser=true
 ConditionPathExists=/usr/share/java/riemann.jar
 ConditionPathExists=/etc/riemann/riemann.config
 Environment=JAVA=/usr/bin/java
@@ -10,7 +12,6 @@ Environment=JAVA_OPTS=
 Environment=EXTRA_CLASSPATH=
 ExecStart=$JAVA $JAVA_OPTS -cp /usr/share/java/riemann.jar:$EXTRA_CLASSPATH riemann.bin start /etc/riemann/riemann.config
 Restart=on-failure
-DynamicUser=true
 LogsDirectory=riemann
 StateDirectory=riemann
 RuntimeDirectory=riemann

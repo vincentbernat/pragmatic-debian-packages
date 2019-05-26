@@ -3,6 +3,8 @@ Description=memcached daemon
 After=network.target
 
 [Service]
+User=_memcached
+DynamicUser=yes
 Type=forking
 Environment=PORT=11211
 Environment=MAXCONN=1024
@@ -10,7 +12,6 @@ Environment=CACHESIZE=64
 Environment=OPTIONS=
 ExecStart=/usr/bin/memcached -d -p $PORT -m $CACHESIZE -c $MAXCONN $OPTIONS
 Restart=on-failure
-DynamicUser=yes
 
 [Install]
 WantedBy=multi-user.target

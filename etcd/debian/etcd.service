@@ -3,6 +3,8 @@ Description=etcd key-value store
 Documentation=https://github.com/etcd-io/etcd
 
 [Service]
+User=_etcd
+DynamicUser=yes
 Type=notify
 Environment=ETCD_DATA_DIR=/var/lib/etcd
 Environment=ETCD_NAME=%m
@@ -10,7 +12,6 @@ ExecStart=/usr/bin/etcd
 Restart=always
 RestartSec=10s
 LimitNOFILE=40000
-DynamicUser=yes
 StateDirectory=etcd
 
 [Install]
