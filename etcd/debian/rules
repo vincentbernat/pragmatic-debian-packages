@@ -1,21 +1,19 @@
 #!/usr/bin/make -f
 
-DISTRIBUTION = $(shell lsb_release -sc)
-VERSION = 2.3.1
+DISTRIBUTION = $(shell sed -n "s/^VERSION_CODENAME=//p" /etc/os-release)
+VERSION = 3.3.13
 PACKAGEVERSION = $(VERSION)-0~$(DISTRIBUTION)0
 TARBALL = v$(VERSION).tar.gz
-URL = https://github.com/coreos/etcd/archive/$(TARBALL)
+URL = https://github.com/etcd-io/etcd/archive/$(TARBALL)
 
 %:
-	dh $@ --with systemd
+	dh $@
 
+export GOCACHE=/tmp
 override_dh_auto_clean:
-	# Grab and unpack wanted version
+	# Download and extract the tarball
 	wget -N --progress=dot:mega $(URL)
 	tar --strip-components=1 -xf $(TARBALL)
-
-override_dh_auto_build:
-	./build
 
 override_dh_gencontrol:
 	dh_gencontrol -- -v$(PACKAGEVERSION)

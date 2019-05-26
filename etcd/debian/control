@@ -1,11 +1,10 @@
 Source: etcd
 Maintainer: Vincent Bernat <bernat@debian.org>
-Build-Depends: debhelper (>= 9),
-               wget, ca-certificates, lsb-release,
-               golang, git,
-               dh-systemd
+Build-Depends: debhelper (>= 11),
+               wget, ca-certificates,
+               golang, git
 
 Package: etcd
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}, adduser
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: highly-available key value store

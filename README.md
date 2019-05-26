@@ -110,9 +110,9 @@ is almost correct in respect to the Debian policy.
 ### etcd
 
 This package ships etcd, a key-value store written in Go. It ships a
-systemd service unit and an upstart job. It doesn't come with a
-`/etc/default/etcd` that would have been handy to have for more
-customizations. It will make the daemon run as `_etcd`.
+systemd service unit. It doesn't come with a `/etc/default/etcd` that
+would have been handy to have for more customizations. It will make
+the daemon run as `etcd`, relying on systemd to create it.
 
 ### riemann
 
