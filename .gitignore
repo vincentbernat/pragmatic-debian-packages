@@ -2,6 +2,9 @@
 /*.deb
 /*.dsc
 /*.changes
+/*.build
+/*.buildinfo
+/*.tar.gz
 
 # Only care about debian/ directory
 /*/*
