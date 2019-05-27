@@ -8,7 +8,7 @@ packaging practices presented here are compatible with Debian 9
 wish to support older distributions, switch to the `2016` tag.
 
 See the following articles for some background:
-[Pragmatic Debian packaging](http://vincent.bernat.im/en/blog/2019-pragmatic-debian-packaging.html).
+[Pragmatic Debian packaging](https://vincent.bernat.im/en/blog/2019-pragmatic-debian-packaging).
 
 All those packages can be built with:
 
