@@ -134,11 +134,12 @@ upstart job/systemd unit.
 
 This package also uses `dh-virtualenv` but with a variation. It relies
 on `pip` to download `sentry` through a provided `requirements.txt`
-(where the version can be influenced). It also ensure everything is
-built from source with the exception of `symbolic` which is too "hard"
-to compile (it needs `rust` and `cargo`). It also uses several systemd
-unit files. As a dynamic user cannot be shared accross systemd unit
-files, we have to create the user in postinst.
+(where the version should be set even if it's not the case in this
+example). It also ensure everything is built from source with the
+exception of `symbolic` which is too "hard" to compile (it needs
+`rust` and `cargo`). It also uses several systemd unit files. As a
+dynamic user cannot be shared accross systemd unit files, we have to
+create the user in postinst.
 
 ### kiwiirc
 
