@@ -9,7 +9,7 @@ URL = https://nodejs.org/dist/v$(VERSION)/$(TARBALL)
 %:
 	dh $@
 
-override_dh_auto_clean:
+override_dh_update_autotools_config:
 	# Grab and unpack wanted version of nodejs
 	wget --progress=dot:mega -N $(URL)
 	tar --strip-components=1 -xf $(TARBALL)

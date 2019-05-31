@@ -10,7 +10,7 @@ URL = https://github.com/etcd-io/etcd/archive/$(TARBALL)
 	dh $@
 
 export GOCACHE=/tmp
-override_dh_auto_clean:
+override_dh_update_autotools_config:
 	# Download and extract the tarball
 	wget -N --progress=dot:mega $(URL)
 	tar --strip-components=1 -xf $(TARBALL)

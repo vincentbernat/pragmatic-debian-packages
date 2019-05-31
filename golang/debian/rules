@@ -10,7 +10,7 @@ URL = https://storage.googleapis.com/golang/$(TARBALL)
 %:
 	dh $@
 
-override_dh_auto_clean:
+override_dh_update_autotools_config:
 	wget -N --progress=dot:mega $(URL)
 	tar xf $(TARBALL)
 

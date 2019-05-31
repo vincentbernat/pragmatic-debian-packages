@@ -12,7 +12,7 @@ URL = https://pypi.python.org/packages/source/F/Flask/$(TARBALL)
 %:
 	dh $@ --with python2,python3 --buildsystem pybuild
 
-override_dh_auto_clean:
+override_dh_update_autotools_config:
 	# Download and extract the tarball
 	wget -N --progress=dot:mega $(URL)
 	tar --strip-components=1 -xf $(TARBALL)

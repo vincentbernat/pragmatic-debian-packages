@@ -7,7 +7,7 @@ PACKAGEVERSION = $(VERSION)-0~$(DISTRIBUTION)0
 %:
 	dh $@
 
-override_dh_auto_clean:
+override_dh_update_autotools_config:
 	# http://dev.maxmind.com/geoip/geoip2/geolite2/
 	wget -N --progress=dot:mega "http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz"
 	wget -N --progress=dot:mega "http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.mmdb.gz"
