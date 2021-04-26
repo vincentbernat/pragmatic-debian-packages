@@ -1,6 +1,6 @@
 Source: puppetboard
 Maintainer: Vincent Bernat <bernat@debian.org>
-Build-Depends: debhelper (>= 12),
+Build-Depends: debhelper (>= 11),
                dh-virtualenv,
                dh-python,
                python3, python3-setuptools,
