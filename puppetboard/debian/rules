@@ -7,7 +7,7 @@ TARBALL = v$(VERSION).tar.gz
 URL = https://github.com/voxpupuli/puppetboard/archive/$(TARBALL)
 
 %:
-	dh $@ --with python-virtualenv
+	dh $@ --buildsystem=pybuild --with python-virtualenv
 
 override_dh_clean:
 	dh_clean
@@ -16,7 +16,7 @@ override_dh_clean:
 	tar --strip-components=1 -xf $(TARBALL)
 
 override_dh_virtualenv:
-	dh_virtualenv --preinstall=gunicorn
+	dh_virtualenv --preinstall=gunicorn --python python3
 
 override_dh_gencontrol:
 	dh_gencontrol -- -v$(PACKAGEVERSION)
